@@ -1,0 +1,22 @@
+import React from 'react';
+
+function ProductCard({ product, onAddToCart, inCart }) {
+  return (
+    <div className="product-card">
+      <h2 className="product-title">{product.title}</h2>
+      <div className="product-image-container">
+        <img src={product.image} alt={product.title} className="product-image" />
+      </div>
+      <h3 className="product-price">Price: Rs. {product.price}</h3>
+      <button
+        className="add-to-cart-btn"
+        onClick={() => onAddToCart(product)}
+      >
+        {inCart ? 'Remove from Cart' : 'Add to Cart'}
+      </button>
+    </div>
+  );
+}
+
+export default ProductCard;
+
